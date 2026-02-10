@@ -6,260 +6,91 @@
 <title>Koyyn Store</title>
 
 <style>
-body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#0b1220;
-    color:#fff;
-}
-.container{
-    max-width:900px;
-    margin:auto;
-    padding:15px;
-}
-h1{
-    text-align:center;
-    color:#4da3ff;
-    text-shadow:0 0 10px #4da3ff;
-}
-.box{
-    background:#111a2e;
-    border-radius:15px;
-    padding:15px;
-    margin-bottom:15px;
-    box-shadow:0 0 15px rgba(77,163,255,.2);
-}
-.box h2{
-    color:#4da3ff;
-    border-bottom:1px solid #2a3b5f;
-    padding-bottom:6px;
-}
-.item{
-    display:flex;
-    justify-content:space-between;
-    padding:6px 0;
-    border-bottom:1px dashed #2a3b5f;
-}
-.item:last-child{border:none}
-.price{
-    color:#4cff8f;
-    font-weight:bold;
-}
-.form input,.form textarea{
-    width:100%;
-    padding:10px;
-    margin-top:8px;
-    border-radius:10px;
-    border:none;
-}
-.form input[type="file"]{
-    background:#0b1220;
-    color:#aaa;
-}
-button{
-    width:100%;
-    margin-top:12px;
-    padding:12px;
-    border:none;
-    border-radius:12px;
-    background:#4da3ff;
-    color:#000;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
-}
-button:hover{
-    box-shadow:0 0 15px #4da3ff;
-}
-.warning{
-    background:#2a1020;
-    border:2px solid red;
-    border-radius:12px;
-    padding:12px;
-    margin-top:10px;
-}
-.warning h3{color:red;margin-top:0}
-.footer{
-    text-align:center;
-    margin-top:20px;
-    color:#aaa;
-}
+body{margin:0;font-family:Arial;background:#0b1220;color:#fff}
+header{text-align:center;padding:15px;color:#4da3ff;text-shadow:0 0 10px #4da3ff}
+.main{display:flex;gap:10px;padding:10px}
+.sidebar{width:45%;max-height:80vh;overflow-y:auto;background:#0f1a30;border-radius:15px;padding:10px}
+.content{width:55%}
+.box{background:#111a2e;border-radius:12px;padding:10px;margin-bottom:10px}
+.box h2{color:#4da3ff;border-bottom:1px solid #2a3b5f;font-size:15px}
+.item{display:flex;justify-content:space-between;padding:5px;border-bottom:1px dashed #2a3b5f;cursor:pointer}
+.item:hover{background:#1a2a4a}
+.price{color:#4cff8f;font-weight:bold}
+.search{width:100%;padding:8px;border-radius:10px;border:none;margin-bottom:10px}
+.form input,.form textarea{width:100%;padding:10px;margin-top:8px;border-radius:10px;border:none}
+button{width:100%;padding:12px;margin-top:10px;border:none;border-radius:12px;background:#4da3ff;font-weight:bold}
+@media(max-width:768px){.main{flex-direction:column}.sidebar,.content{width:100%}}
 </style>
 
 <script>
-function kirimWA(){
-    let user=document.getElementById("user").value;
-    let pass=document.getElementById("pass").value;
-    let wa=document.getElementById("wa").value;
-    let item=document.getElementById("item").value;
-
-    let pesan=`ORDER KOYYN STORE%0A
-Username: ${user}%0A
-Password: ${pass}%0A
-WA: ${wa}%0A
-Pesanan: ${item}`;
-
-    window.open("https://wa.me/6281366189005?text="+pesan,"_blank");
+function pilih(n,h){document.getElementById("item").value=n+" - "+h}
+function cari(){
+ let q=document.getElementById("search").value.toLowerCase();
+ document.querySelectorAll(".item").forEach(i=>{
+  i.style.display=i.innerText.toLowerCase().includes(q)?"flex":"none";
+ });
+}
+function wa(){
+ let t=`ORDER KOYYN STORE%0AUser: ${user.value}%0APass: ${pass.value}%0AWA: ${waa.value}%0AItem: ${item.value}`;
+ window.open("https://wa.me/6281366189005?text="+t);
 }
 </script>
-
 </head>
 <body>
 
-<div class="container">
-<h1>KOYYN STORE</h1>
+<header><h1>KOYYN STORE</h1></header>
 
-<!-- SWORD -->
-<div class="box">
-<h2>SWORD</h2>
-<div class="item"><span>YAMA</span><span class="price">10K</span></div>
-<div class="item"><span>TUSHITA</span><span class="price">15K</span></div>
-<div class="item"><span>SPIKEY TRIDENT</span><span class="price">10K</span></div>
-<div class="item"><span>SHARK ANCHOR</span><span class="price">20K</span></div>
-<div class="item"><span>POLE V2</span><span class="price">4K</span></div>
-<div class="item"><span>FOX LAMP</span><span class="price">20K</span></div>
+<div class="main">
+
+<div class="sidebar">
+<input id="search" class="search" placeholder="Cari item..." onkeyup="cari()">
+
+<div class="box"><h2>SWORD</h2>
+<div class="item" onclick="pilih('YAMA','10K')"><span>YAMA</span><span class="price">10K</span></div>
+<div class="item" onclick="pilih('TUSHITA','15K')"><span>TUSHITA</span><span class="price">15K</span></div>
+<div class="item" onclick="pilih('SPIKEY TRIDENT','10K')"><span>SPIKEY TRIDENT</span><span class="price">10K</span></div>
+<div class="item" onclick="pilih('SHARK ANCHOR','20K')"><span>SHARK ANCHOR</span><span class="price">20K</span></div>
+<div class="item" onclick="pilih('POLE V2','4K')"><span>POLE V2</span><span class="price">4K</span></div>
+<div class="item" onclick="pilih('FOX LAMP','20K')"><span>FOX LAMP</span><span class="price">20K</span></div>
 </div>
 
-<!-- GUN -->
-<div class="box">
-<h2>GUN</h2>
-<div class="item"><span>SKULL GUITAR</span><span class="price">25K</span></div>
-<div class="item"><span>VENOM BOW</span><span class="price">3K</span></div>
-<div class="item"><span>KABUCHA</span><span class="price">3K</span></div>
+<div class="box"><h2>GUN</h2>
+<div class="item" onclick="pilih('SKULL GUITAR','25K')"><span>SKULL GUITAR</span><span class="price">25K</span></div>
+<div class="item" onclick="pilih('VENOM BOW','3K')"><span>VENOM BOW</span><span class="price">3K</span></div>
+<div class="item" onclick="pilih('KABUCHA','3K')"><span>KABUCHA</span><span class="price">3K</span></div>
 </div>
 
-<!-- FIGHTING -->
-<div class="box">
-<h2>FIGHTING STYLE</h2>
-<div class="item"><span>DEATH STEP</span><span class="price">8K</span></div>
-<div class="item"><span>SHARKMAN KARATE</span><span class="price">8K</span></div>
-<div class="item"><span>ELECTRIC CLAW</span><span class="price">10K</span></div>
-<div class="item"><span>DRAGON TALON</span><span class="price">12K</span></div>
-<div class="item"><span>GOD HUMAN</span><span class="price">20K</span></div>
+<div class="box"><h2>FIGHTING STYLE</h2>
+<div class="item" onclick="pilih('DEATH STEP','8K')"><span>DEATH STEP</span><span class="price">8K</span></div>
+<div class="item" onclick="pilih('SHARKMAN','8K')"><span>SHARKMAN</span><span class="price">8K</span></div>
+<div class="item" onclick="pilih('E.CLAW','10K')"><span>E.CLAW</span><span class="price">10K</span></div>
+<div class="item" onclick="pilih('DRAGON TALON','12K')"><span>DRAGON TALON</span><span class="price">12K</span></div>
+<div class="item" onclick="pilih('GOD HUMAN','20K')"><span>GOD HUMAN</span><span class="price">20K</span></div>
 </div>
 
-<!-- FORM -->
+<div class="box"><h2>DLL (RINGKAS)</h2>
+<div class="item" onclick="pilih('CYBORG','15K')"><span>CYBORG</span><span class="price">15K</span></div>
+<div class="item" onclick="pilih('GHOUL','8K')"><span>GHOUL</span><span class="price">8K</span></div>
+<div class="item" onclick="pilih('FIND MIRAGE','10K')"><span>MIRAGE</span><span class="price">10K</span></div>
+<div class="item" onclick="pilih('KAPAL LEVI','20K')"><span>BOAT LEVI</span><span class="price">20K</span></div>
+</div>
+</div>
+
+<div class="content">
 <div class="box form">
 <h2>FORM ORDER</h2>
-<input id="user" type="text" placeholder="Username Roblox">
+<input id="user" placeholder="Username Roblox">
 <input id="pass" type="password" placeholder="Password Roblox">
-<input id="wa" type="text" placeholder="Nomor WhatsApp Aktif">
-<textarea id="item" rows="3" placeholder="Pesanan (contoh: Joki Level 1500 - MAX)"></textarea>
-
-<label>Upload Bukti Transfer:</label>
-<input type="file">
-
-<div class="warning">
-<h3>⚠ PERINGATAN</h3>
-<ul>
-<li>Akun tidak boleh login saat proses</li>
-<li>Ganti password setelah DONE</li>
-<li>Estimasi tergantung antrian</li>
-</ul>
+<input id="waa" placeholder="Nomor WhatsApp">
+<textarea id="item" rows="4" placeholder="Klik item di kiri"></textarea>
+<button onclick="wa()">ORDER VIA WHATSAPP</button>
 </div>
 
-<button onclick="kirimWA()">ORDER VIA WHATSAPP</button>
+<div style="text-align:center;color:#aaa">
+Owner WA & DANA: <b>081366189005</b>
 </div>
-
-<div class="footer">
-Owner WA & DANA: <b>081366189005</b><br>
-© 2026 Koyyn Store
 </div>
 
 </div>
 </body>
 </html>
-<!-- MASTERY -->
-<div class="box">
-<h2>MASTERY</h2>
-<div class="item"><span>0 - 400</span><span class="price">6K</span></div>
-</div>
-
-<!-- MATERIAL -->
-<div class="box">
-<h2>MATERIAL</h2>
-<div class="item"><span>DARK FRAGMENT</span><span class="price">15K</span></div>
-<div class="item"><span>MONSTER MAGNET</span><span class="price">10K</span></div>
-<div class="item"><span>MIRROR FRACTAL</span><span class="price">25K</span></div>
-<div class="item"><span>ECTOPLASM</span><span class="price">20 / 1K</span></div>
-<div class="item"><span>BONE</span><span class="price">60 / 1K</span></div>
-<div class="item"><span>MYSTIC DROPLET</span><span class="price">5 / 1K</span></div>
-<div class="item"><span>ENERGY WING</span><span class="price">10 / 1K</span></div>
-<div class="item"><span>CONJURED COCOA</span><span class="price">3 / 1K</span></div>
-<div class="item"><span>MUTANT TOOTH</span><span class="price">2K</span></div>
-<div class="item"><span>TERROR EYE</span><span class="price">4K</span></div>
-</div>
-
-<!-- DRACO -->
-<div class="box">
-<h2>DRACO</h2>
-<div class="item"><span>SABUK PUTIH - ITEM</span><span class="price">20K</span></div>
-<div class="item"><span>DRAGON EGG</span><span class="price">20K</span></div>
-<div class="item"><span>VOLCANIC MAGNET</span><span class="price">15K</span></div>
-<div class="item"><span>DRAGON HEART</span><span class="price">30K</span></div>
-<div class="item"><span>DRAGON STORM</span><span class="price">30K</span></div>
-</div>
-
-<!-- RACE -->
-<div class="box">
-<h2>RACE</h2>
-<div class="item"><span>CYBORG</span><span class="price">15K</span></div>
-<div class="item"><span>GHOUL</span><span class="price">8K</span></div>
-</div>
-
-<!-- PAKET -->
-<div class="box">
-<h2>PAKET V1 - V3</h2>
-<div class="item"><span>PAKET V1 - V3</span><span class="price">5K</span></div>
-</div>
-
-<!-- JOKI MONEY -->
-<div class="box">
-<h2>JOKI MONEY / FRAGMENT</h2>
-<div class="item"><span>1M Beli</span><span class="price">2K</span></div>
-<div class="item"><span>1RB Fragment</span><span class="price">800P</span></div>
-</div>
-
-<!-- JOKI FRUIT -->
-<div class="box">
-<h2>PAKET JOKI V2 FRUIT</h2>
-<div class="item"><span>ALL FRUIT</span><span class="price">7K</span></div>
-<div class="item"><span>BUDDHA FRUIT</span><span class="price">10K</span></div>
-<div class="item"><span>DOUGH FRUIT</span><span class="price">15K</span></div>
-</div>
-
-<!-- JOKI LEVEL -->
-<div class="box">
-<h2>JOKI LEVEL</h2>
-<div class="item"><span>1 - 700</span><span class="price">8K</span></div>
-<div class="item"><span>700 - 1500</span><span class="price">10K</span></div>
-<div class="item"><span>1500 - MAX</span><span class="price">14K</span></div>
-</div>
-
-<!-- HAKI -->
-<div class="box">
-<h2>HAKI COLORS</h2>
-<div class="item"><span>SNOW WHITE</span><span class="price">6K</span></div>
-<div class="item"><span>WINTER SKY</span><span class="price">8K</span></div>
-<div class="item"><span>PURE RED</span><span class="price">8K</span></div>
-</div>
-
-<!-- RAID -->
-<div class="box">
-<h2>RAID</h2>
-<div class="item"><span>ALL RAID</span><span class="price">1K</span></div>
-<div class="item"><span>BUDDHA RAID</span><span class="price">4K</span></div>
-<div class="item"><span>DOUGH / PHOENIX RAID</span><span class="price">8K</span></div>
-</div>
-
-<!-- MIRAGE -->
-<div class="box">
-<h2>MIRAGE</h2>
-<div class="item"><span>FIND MIRAGE</span><span class="price">10K</span></div>
-</div>
-
-<!-- BOAT -->
-<div class="box">
-<h2>BOAT</h2>
-<div class="item"><span>KAPAL HUNT LEVI</span><span class="price">20K</span></div>
-</div>
