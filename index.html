@@ -1,260 +1,278 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Koyyn Store</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Koyyn Store</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #0b1220;
-      color: #ffffff;
-    }
-
-    header {
-      background-color: #020617;
-      padding: 20px;
-      text-align: center;
-      font-size: 26px;
-      font-weight: bold;
-    }
-
-    .container {
-      display: flex;
-      gap: 20px;
-      padding: 20px;
-      flex-wrap: wrap;
-    }
-
-    .price-list {
-      flex: 1;
-      min-width: 320px;
-      max-height: 80vh;
-      overflow-y: scroll;
-      background-color: #020617;
-      padding: 20px;
-      border-radius: 12px;
-    }
-
-    .order-form {
-      flex: 1;
-      min-width: 300px;
-      background-color: #020617;
-      padding: 20px;
-      border-radius: 12px;
-    }
-
-    h2 {
-      margin-top: 0;
-      border-bottom: 1px solid #334155;
-      padding-bottom: 8px;
-      color: #38bdf8;
-    }
-
-    .section {
-      margin-bottom: 22px;
-      line-height: 1.8;
-    }
-
-    .section-title {
-      font-weight: bold;
-      color: #22d3ee;
-      font-size: 17px;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 8px;
-      margin-bottom: 15px;
-      background-color: #020617;
-      border: 1px solid #334155;
-      border-radius: 8px;
-      color: white;
-      font-size: 14px;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      background-color: #2563eb;
-      border: none;
-      border-radius: 10px;
-      color: white;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #1d4ed8;
-    }
-
-    footer {
-      text-align: center;
-      padding: 15px;
-      font-size: 13px;
-      opacity: 0.7;
-    }
-  </style>
+<style>
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#0b1220;
+  color:#fff;
+}
+header{
+  background:#020617;
+  padding:20px;
+  text-align:center;
+  font-size:26px;
+  font-weight:bold;
+}
+.container{
+  display:flex;
+  gap:20px;
+  padding:20px;
+  flex-wrap:wrap;
+}
+.price-list{
+  flex:1;
+  min-width:320px;
+  max-height:80vh;
+  overflow-y:auto;
+  background:#020617;
+  padding:20px;
+  border-radius:12px;
+}
+.order-form{
+  flex:1;
+  min-width:300px;
+  background:#020617;
+  padding:20px;
+  border-radius:12px;
+}
+h2{
+  margin-top:0;
+  border-bottom:1px solid #334155;
+  padding-bottom:8px;
+  color:#38bdf8;
+}
+.section{
+  margin-bottom:22px;
+  line-height:1.8;
+}
+.section-title{
+  font-weight:bold;
+  color:#22d3ee;
+}
+input,textarea,select{
+  width:100%;
+  padding:10px;
+  margin-top:6px;
+  margin-bottom:14px;
+  background:#020617;
+  border:1px solid #334155;
+  border-radius:8px;
+  color:#fff;
+}
+button{
+  width:100%;
+  padding:12px;
+  background:#2563eb;
+  border:none;
+  border-radius:10px;
+  color:#fff;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+button:hover{
+  background:#1d4ed8;
+}
+footer{
+  text-align:center;
+  padding:15px;
+  font-size:13px;
+  opacity:0.7;
+}
+</style>
 </head>
+
 <body>
 
 <header>Koyyn Store</header>
 
 <div class="container">
 
-  <!-- LIST HARGA -->
-  <div class="price-list">
-    <h2>List Harga Lengkap</h2>
+<!-- LIST HARGA -->
+<div class="price-list">
+<h2>List Harga Lengkap</h2>
 
-    <div class="section">
-      <div class="section-title">SWORD</div>
-      YAMA : 10K<br>
-      TUSHITA : 15K<br>
-      SPIKEY TRIDENT : 10K<br>
-      SHARK ANCHOR : 20K<br>
-      POLE V2 : 4K<br>
-      FOX LAMP : 20K<br>
-      ITEM SWORD LAINNYA : CHAT ADMIN
-    </div>
+<div class="section">
+<div class="section-title">SWORD</div>
+YAMA : 10K<br>
+TUSHITA : 15K<br>
+SPIKEY TRIDENT : 10K<br>
+SHARK ANCHOR : 20K<br>
+POLE V2 : 4K<br>
+FOX LAMP : 20K
+</div>
 
-    <div class="section">
-      <div class="section-title">GUN</div>
-      SKULL GUITAR : 25K<br>
-      VENOM BOW : 3K<br>
-      KABUCHA : 3K<br><br>
-      SYARAT : WAJIB LEVEL 2300+<br>
-      JIKA BEBERAPA MATERIAL SUDAH LENGKAP, BISA DAPAT POTONGAN HARGA
-    </div>
+<div class="section">
+<div class="section-title">GUN</div>
+SKULL GUITAR : 25K<br>
+VENOM BOW : 3K<br>
+KABUCHA : 3K<br>
+SYARAT WAJIB LEVEL 2300+
+</div>
 
-    <div class="section">
-      <div class="section-title">FIGHTING STYLE</div>
-      DEATH STEP : 8K<br>
-      SHARKMAN KARATE : 8K<br>
-      ELECTRIC CLAW : 10K<br>
-      DRAGON TALON : 12K<br>
-      GODHUMAN : 20K
-    </div>
+<div class="section">
+<div class="section-title">FIGHTING STYLE</div>
+DEATH STEP : 8K<br>
+SHARKMAN KARATE : 8K<br>
+ELECTRIC CLAW : 10K<br>
+DRAGON TALON : 12K<br>
+GODHUMAN : 20K
+</div>
 
-    <div class="section">
-      <div class="section-title">MASTERY</div>
-      MASTERY LEVEL 0 SAMPAI 400 : 6K
-    </div>
+<div class="section">
+<div class="section-title">MASTERY</div>
+0 – 400 : 6K
+</div>
 
-    <div class="section">
-      <div class="section-title">MATERIAL</div>
-      DARK FRAGMENT : 15K<br>
-      MONSTER MAGNET : 10K<br>
-      MIRROR FRACTAL : 25K<br>
-      ECTOPLASM : 20 / 1K<br>
-      BONE : 60 / 1K<br>
-      MYSTIC DROPLET : 5 / 1K<br>
-      ELECTRIC WING : 10 / 1K<br>
-      CONJURED COCOA : 3 / 1K<br>
-      MUTANT TOOTH : 2K<br>
-      TERROR EYE : 4K
-    </div>
+<div class="section">
+<div class="section-title">MATERIAL</div>
+DARK FRAGMENT : 15K<br>
+MONSTER MAGNET : 10K<br>
+MIRROR FRACTAL : 25K<br>
+ECTOPLASM : 20 / 1K<br>
+BONE : 60 / 1K<br>
+MYSTIC DROPLET : 5 / 1K<br>
+ELECTRIC WING : 10 / 1K<br>
+CONJURED COCOA : 3 / 1K<br>
+MUTANT TOOTH : 2K<br>
+TERROR EYE : 4K
+</div>
 
-    <div class="section">
-      <div class="section-title">DRACO</div>
-      SABUK PUTIH SAMPAI ITEM : 20K<br>
-      DRAGON EGG : 20K<br>
-      VOLCANIC MAGNET : 15K<br><br>
-      SYARAT : ITEM DI ATAS WAJIB SUDAH SABUK OREN<br><br>
-      DRAGON HEART : 30K<br>
-      DRAGON STORM : 30K
-    </div>
+<div class="section">
+<div class="section-title">DRACO</div>
+SABUK PUTIH – ITEM : 20K<br>
+DRAGON EGG : 20K<br>
+VOLCANIC MAGNET : 15K<br>
+DRAGON HEART : 30K<br>
+DRAGON STORM : 30K
+</div>
 
-    <div class="section">
-      <div class="section-title">RACE</div>
-      CYBORG : 15K<br>
-      GHOUL : 8K
-    </div>
+<div class="section">
+<div class="section-title">RACE</div>
+CYBORG : 15K<br>
+GHOUL : 8K
+</div>
 
-    <div class="section">
-      <div class="section-title">PAKET RACE</div>
-      PAKET V1 SAMPAI V3 : 5K
-    </div>
+<div class="section">
+<div class="section-title">PAKET RACE</div>
+V1 – V3 : 5K
+</div>
 
-    <div class="section">
-      <div class="section-title">JOKI MONEY & FRAGMENT</div>
-      JOKI MONEY 1M : 2K<br>
-      JOKI FRAGMENT 1.000 : 800P
-    </div>
+<div class="section">
+<div class="section-title">JOKI MONEY / FRAGMENT</div>
+1M MONEY : 2K<br>
+1.000 FRAGMENT : 800P
+</div>
 
-    <div class="section">
-      <div class="section-title">PAKET JOKI V2 FRUIT</div>
-      ALL FRUIT : 7K<br>
-      BUDDHA FRUIT : 10K<br>
-      DOUGH FRUIT : 15K
-    </div>
+<div class="section">
+<div class="section-title">PAKET JOKI V2 FRUIT</div>
+ALL FRUIT : 7K<br>
+BUDDHA FRUIT : 10K<br>
+DOUGH FRUIT : 15K
+</div>
 
-    <div class="section">
-      <div class="section-title">JOKI LEVEL</div>
-      LEVEL 1 SAMPAI 700 : 8K<br>
-      LEVEL 700 SAMPAI 1500 : 10K<br>
-      LEVEL 1500 SAMPAI MAX : 14K
-    </div>
+<div class="section">
+<div class="section-title">JOKI LEVEL</div>
+1 – 700 : 8K<br>
+700 – 1500 : 10K<br>
+1500 – MAX : 14K
+</div>
 
-    <div class="section">
-      <div class="section-title">HAKI COLORS</div>
-      SNOW WHITE : 6K<br>
-      WINTER SKY : 8K<br>
-      PURE RED : 8K
-    </div>
+<div class="section">
+<div class="section-title">HAKI COLORS</div>
+SNOW WHITE : 6K<br>
+WINTER SKY : 8K<br>
+PURE RED : 8K
+</div>
 
-    <div class="section">
-      <div class="section-title">RAID</div>
-      ALL RAID : 1K<br>
-      BUDDHA RAID : 4K<br>
-      DOUGH RAID : 8K<br>
-      PHOENIX RAID : 8K<br>
-      CATATAN : RAID DOUGH / PHOENIX PAKAI TIKET SENDIRI
-    </div>
+<div class="section">
+<div class="section-title">RAID</div>
+ALL RAID : 1K<br>
+BUDDHA RAID : 4K<br>
+DOUGH / PHOENIX RAID : 8K
+</div>
 
-    <div class="section">
-      <div class="section-title">MIRAGE</div>
-      FIND MIRAGE ISLAND : 10K
-    </div>
+<div class="section">
+<div class="section-title">MIRAGE</div>
+FIND MIRAGE : 10K
+</div>
 
-    <div class="section">
-      <div class="section-title">BOAT</div>
-      KAPAL UNTUK HUNT LEVIATHAN : 20K
-    </div>
+<div class="section">
+<div class="section-title">BOAT</div>
+KAPAL HUNT LEVIATHAN : 20K
+</div>
+</div>
 
-  </div>
+<!-- FORM -->
+<div class="order-form">
+<h2>Form Order</h2>
 
-  <!-- FORM -->
-  <div class="order-form">
-    <h2>Form Pengisian Data</h2>
+Username Roblox
+<input id="user" type="text" placeholder="Username roblox">
 
-    Username Roblox
-    <input type="text" placeholder="Masukkan username roblox">
+Password Roblox
+<input id="pass" type="password" placeholder="Password roblox">
 
-    Password Roblox
-    <input type="password" placeholder="Masukkan password">
+Pilih Item / Jasa
+<select id="item">
+<option value="">-- Pilih Item --</option>
+<option>YAMA - 10K</option>
+<option>TUSHITA - 15K</option>
+<option>SPIKEY TRIDENT - 10K</option>
+<option>SHARK ANCHOR - 20K</option>
+<option>FOX LAMP - 20K</option>
+<option>SKULL GUITAR - 25K</option>
+<option>GODHUMAN - 20K</option>
+<option>JOKI LEVEL 1-700 - 8K</option>
+<option>JOKI LEVEL 700-1500 - 10K</option>
+<option>JOKI LEVEL 1500-MAX - 14K</option>
+</select>
 
-    Item / Jasa Yang Dipesan
-    <input type="text" placeholder="Contoh: Yama / Joki Level">
+Catatan
+<textarea id="note" rows="4"></textarea>
 
-    Catatan Tambahan
-    <textarea rows="4" placeholder="Jika ada catatan tambahan"></textarea>
+<button onclick="kirimWA()">Kirim ke WhatsApp</button>
 
-    <button>Kirim Data</button>
+<hr style="border:1px solid #334155">
 
-    <hr style="border:1px solid #334155">
-
-    <b>OWNER</b><br>
-    WhatsApp : 081366189005<br>
-    DANA : 081366189005
-  </div>
+<b>OWNER</b><br>
+WhatsApp : 081366189005<br>
+DANA : 081366189005
+</div>
 
 </div>
 
 <footer>© Koyyn Store</footer>
+
+<script>
+function kirimWA(){
+  var u=document.getElementById("user").value;
+  var p=document.getElementById("pass").value;
+  var i=document.getElementById("item").value;
+  var n=document.getElementById("note").value;
+
+  if(u==""||p==""||i==""){
+    alert("Lengkapi data dulu!");
+    return;
+  }
+
+  var wa="6281366189005";
+  var text=
+  "ORDER KOYYN STORE%0A%0A"+
+  "Username: "+u+"%0A"+
+  "Password: "+p+"%0A"+
+  "Item: "+i+"%0A"+
+  "Catatan: "+n;
+
+  window.open("https://wa.me/"+wa+"?text="+text,"_blank");
+}
+</script>
 
 </body>
 </html>
