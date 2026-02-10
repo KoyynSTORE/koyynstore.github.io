@@ -4,78 +4,97 @@
   <meta charset="UTF-8">
   <title>Koyyn Store</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #0b1220;
+      color: #ffffff;
     }
+
     header {
-      background: #020617;
-      padding: 15px;
+      background-color: #020617;
+      padding: 20px;
       text-align: center;
-      font-size: 22px;
+      font-size: 26px;
       font-weight: bold;
     }
+
     .container {
       display: flex;
+      gap: 20px;
+      padding: 20px;
       flex-wrap: wrap;
-      padding: 15px;
-      gap: 15px;
     }
-    .list {
+
+    .price-list {
+      flex: 1;
+      min-width: 320px;
+      max-height: 80vh;
+      overflow-y: scroll;
+      background-color: #020617;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .order-form {
       flex: 1;
       min-width: 300px;
-      max-height: 80vh;
-      overflow-y: auto;
-      background: #020617;
-      padding: 15px;
-      border-radius: 10px;
+      background-color: #020617;
+      padding: 20px;
+      border-radius: 12px;
     }
-    .form {
-      flex: 1;
-      min-width: 280px;
-      background: #020617;
-      padding: 15px;
-      border-radius: 10px;
-    }
+
     h2 {
       margin-top: 0;
       border-bottom: 1px solid #334155;
-      padding-bottom: 5px;
-    }
-    .section {
-      margin-bottom: 15px;
-    }
-    .section b {
+      padding-bottom: 8px;
       color: #38bdf8;
     }
-    input, textarea, button {
+
+    .section {
+      margin-bottom: 22px;
+      line-height: 1.8;
+    }
+
+    .section-title {
+      font-weight: bold;
+      color: #22d3ee;
+      font-size: 17px;
+    }
+
+    input, textarea {
       width: 100%;
       padding: 10px;
       margin-top: 8px;
+      margin-bottom: 15px;
+      background-color: #020617;
+      border: 1px solid #334155;
       border-radius: 8px;
-      border: none;
+      color: white;
       font-size: 14px;
     }
-    input, textarea {
-      background: #020617;
-      color: white;
-      border: 1px solid #334155;
-    }
+
     button {
-      background: #2563eb;
+      width: 100%;
+      padding: 12px;
+      background-color: #2563eb;
+      border: none;
+      border-radius: 10px;
       color: white;
-      cursor: pointer;
+      font-size: 16px;
       font-weight: bold;
+      cursor: pointer;
     }
+
     button:hover {
-      background: #1d4ed8;
+      background-color: #1d4ed8;
     }
+
     footer {
       text-align: center;
-      padding: 10px;
+      padding: 15px;
       font-size: 13px;
       opacity: 0.7;
     }
@@ -88,143 +107,154 @@
 <div class="container">
 
   <!-- LIST HARGA -->
-  <div class="list">
-    <h2>List Harga</h2>
+  <div class="price-list">
+    <h2>List Harga Lengkap</h2>
 
     <div class="section">
-      <b>SWORD</b><br>
-      YAMA: 10K<br>
-      TUSHITA: 15K<br>
-      SPIKEY TRIDENT: 10K<br>
-      SHARK ANCHOR: 20K<br>
-      POLE V2: 4K<br>
-      FOX LAMP: 20K<br>
-      <i>lainnya ke PM</i>
+      <div class="section-title">SWORD</div>
+      YAMA : 10K<br>
+      TUSHITA : 15K<br>
+      SPIKEY TRIDENT : 10K<br>
+      SHARK ANCHOR : 20K<br>
+      POLE V2 : 4K<br>
+      FOX LAMP : 20K<br>
+      ITEM SWORD LAINNYA : CHAT ADMIN
     </div>
 
     <div class="section">
-      <b>GUN</b><br>
-      SKULL GUITAR: 25K<br>
-      VENOM BOW: 3K<br>
-      KABUCHA: 3K
+      <div class="section-title">GUN</div>
+      SKULL GUITAR : 25K<br>
+      VENOM BOW : 3K<br>
+      KABUCHA : 3K<br><br>
+      SYARAT : WAJIB LEVEL 2300+<br>
+      JIKA BEBERAPA MATERIAL SUDAH LENGKAP, BISA DAPAT POTONGAN HARGA
     </div>
 
     <div class="section">
-      <b>FIGHTING STYLE</b><br>
-      DEATH STEP: 8K<br>
-      SHARKMAN K: 8K<br>
-      E.CLAW: 10K<br>
-      DRAGON T: 12K<br>
-      G.HUMAN: 20K
+      <div class="section-title">FIGHTING STYLE</div>
+      DEATH STEP : 8K<br>
+      SHARKMAN KARATE : 8K<br>
+      ELECTRIC CLAW : 10K<br>
+      DRAGON TALON : 12K<br>
+      GODHUMAN : 20K
     </div>
 
     <div class="section">
-      <b>MASTERY</b><br>
-      0 - 400 : 6K
+      <div class="section-title">MASTERY</div>
+      MASTERY LEVEL 0 SAMPAI 400 : 6K
     </div>
 
     <div class="section">
-      <b>MATERIAL</b><br>
-      DARK FRAGMENT: 15K<br>
-      MONSTER MAGNET: 10K<br>
-      MIRROR FRACTAL: 25K<br>
-      ECTOPLASM: 20/1K<br>
-      BONE: 60/1K<br>
-      MYSTIC DROPLET: 5/1K<br>
-      ELECTRIC WING: 10/1K<br>
-      CONJURED COCOA: 3/1K<br>
-      MUTANT TOOTH: 2K<br>
-      TERROR EYE: 4K
+      <div class="section-title">MATERIAL</div>
+      DARK FRAGMENT : 15K<br>
+      MONSTER MAGNET : 10K<br>
+      MIRROR FRACTAL : 25K<br>
+      ECTOPLASM : 20 / 1K<br>
+      BONE : 60 / 1K<br>
+      MYSTIC DROPLET : 5 / 1K<br>
+      ELECTRIC WING : 10 / 1K<br>
+      CONJURED COCOA : 3 / 1K<br>
+      MUTANT TOOTH : 2K<br>
+      TERROR EYE : 4K
     </div>
 
     <div class="section">
-      <b>DRACO</b><br>
-      SABUK PUTIH–ITEM: 20K<br>
-      DRAGON EGG: 20K<br>
-      VOLCANIC MAGNET: 15K<br>
-      DRAGON HEART: 30K<br>
-      DRAGON STORM: 30K
+      <div class="section-title">DRACO</div>
+      SABUK PUTIH SAMPAI ITEM : 20K<br>
+      DRAGON EGG : 20K<br>
+      VOLCANIC MAGNET : 15K<br><br>
+      SYARAT : ITEM DI ATAS WAJIB SUDAH SABUK OREN<br><br>
+      DRAGON HEART : 30K<br>
+      DRAGON STORM : 30K
     </div>
 
     <div class="section">
-      <b>RACE</b><br>
-      CYBORG: 15K<br>
-      GHOUL: 8K
+      <div class="section-title">RACE</div>
+      CYBORG : 15K<br>
+      GHOUL : 8K
     </div>
 
     <div class="section">
-      <b>PAKET</b><br>
-      V1–V3: 5K
+      <div class="section-title">PAKET RACE</div>
+      PAKET V1 SAMPAI V3 : 5K
     </div>
 
     <div class="section">
-      <b>JOKI</b><br>
-      MONEY: 1M / 2K<br>
-      FRAGMENT: 1RB / 800P
+      <div class="section-title">JOKI MONEY & FRAGMENT</div>
+      JOKI MONEY 1M : 2K<br>
+      JOKI FRAGMENT 1.000 : 800P
     </div>
 
     <div class="section">
-      <b>JOKI LEVEL</b><br>
-      1–700: 8K<br>
-      700–1500: 10K<br>
-      1500–MAX: 14K
+      <div class="section-title">PAKET JOKI V2 FRUIT</div>
+      ALL FRUIT : 7K<br>
+      BUDDHA FRUIT : 10K<br>
+      DOUGH FRUIT : 15K
     </div>
 
     <div class="section">
-      <b>HAKI COLORS</b><br>
-      SNOW WHITE: 6K<br>
-      WINTER SKY: 8K<br>
-      PURE RED: 8K
+      <div class="section-title">JOKI LEVEL</div>
+      LEVEL 1 SAMPAI 700 : 8K<br>
+      LEVEL 700 SAMPAI 1500 : 10K<br>
+      LEVEL 1500 SAMPAI MAX : 14K
     </div>
 
     <div class="section">
-      <b>RAID</b><br>
-      ALL RAID: 1K<br>
-      BUDDHA RAID: 4K<br>
-      DOUGH / PHOENIX: 8K
+      <div class="section-title">HAKI COLORS</div>
+      SNOW WHITE : 6K<br>
+      WINTER SKY : 8K<br>
+      PURE RED : 8K
     </div>
 
     <div class="section">
-      <b>MIRAGE</b><br>
-      FIND MIRAGE: 10K
+      <div class="section-title">RAID</div>
+      ALL RAID : 1K<br>
+      BUDDHA RAID : 4K<br>
+      DOUGH RAID : 8K<br>
+      PHOENIX RAID : 8K<br>
+      CATATAN : RAID DOUGH / PHOENIX PAKAI TIKET SENDIRI
     </div>
 
     <div class="section">
-      <b>BOAT</b><br>
-      HUNT LEVI: 20K
+      <div class="section-title">MIRAGE</div>
+      FIND MIRAGE ISLAND : 10K
     </div>
+
+    <div class="section">
+      <div class="section-title">BOAT</div>
+      KAPAL UNTUK HUNT LEVIATHAN : 20K
+    </div>
+
   </div>
 
-  <!-- FORM DATA -->
-  <div class="form">
-    <h2>Form Data Order</h2>
+  <!-- FORM -->
+  <div class="order-form">
+    <h2>Form Pengisian Data</h2>
 
-    <label>Username Roblox</label>
-    <input type="text" placeholder="Masukkan username">
+    Username Roblox
+    <input type="text" placeholder="Masukkan username roblox">
 
-    <label>Password</label>
+    Password Roblox
     <input type="password" placeholder="Masukkan password">
 
-    <label>Item / Jasa</label>
+    Item / Jasa Yang Dipesan
     <input type="text" placeholder="Contoh: Yama / Joki Level">
 
-    <label>Catatan</label>
-    <textarea rows="4" placeholder="Tambahan jika ada"></textarea>
+    Catatan Tambahan
+    <textarea rows="4" placeholder="Jika ada catatan tambahan"></textarea>
 
     <button>Kirim Data</button>
 
-    <hr style="margin:15px 0;border:1px solid #334155">
+    <hr style="border:1px solid #334155">
 
-    <b>Owner</b><br>
-    WA: 081366189005<br>
-    DANA: 081366189005
+    <b>OWNER</b><br>
+    WhatsApp : 081366189005<br>
+    DANA : 081366189005
   </div>
 
 </div>
 
-<footer>
-  © Koyyn Store
-</footer>
+<footer>© Koyyn Store</footer>
 
 </body>
 </html>
