@@ -1,129 +1,171 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Koyyn Store</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body{
-      margin:0;
-      font-family:Arial, Helvetica, sans-serif;
-      background:#0b1220;
-      color:#fff;
-    }
-    h1{
-      text-align:center;
-      padding:20px 10px 5px;
-      color:#4da3ff;
-    }
-    .subtitle{
-      text-align:center;
-      color:#9bbcff;
-      margin-bottom:20px;
-    }
-    .box{
-      background:#0f1c3a;
-      margin:15px;
-      padding:15px;
-      border-radius:15px;
-      box-shadow:0 0 15px rgba(0,0,0,.4);
-    }
-    .box h2{
-      color:#4da3ff;
-      border-bottom:1px solid #1f3b6d;
-      padding-bottom:6px;
-    }
-    .item{
-      display:flex;
-      justify-content:space-between;
-      margin:8px 0;
-      font-size:14px;
-    }
-    .form-box input,.form-box textarea{
-      width:100%;
-      padding:10px;
-      margin:8px 0;
-      border-radius:10px;
-      border:none;
-      outline:none;
-      background:#0b1630;
-      color:white;
-    }
-    .form-box button{
-      width:100%;
-      padding:12px;
-      border:none;
-      border-radius:12px;
-      background:#1f6bff;
-      color:white;
-      font-size:16px;
-      font-weight:bold;
-      cursor:pointer;
-    }
-    .warning{
-      border:2px solid #ff3b3b;
-      border-radius:15px;
-      padding:15px;
-      background:rgba(255,0,0,.08);
-    }
-    .warning h3{
-      color:#ff3b3b;
-      margin-top:0;
-    }
-    footer{
-      text-align:center;
-      font-size:12px;
-      color:#7fa7ff;
-      padding:20px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Koyyn Store</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#0b1220;
+    color:#fff;
+}
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:15px;
+}
+h1{
+    text-align:center;
+    color:#4da3ff;
+    text-shadow:0 0 10px #4da3ff;
+}
+.box{
+    background:#111a2e;
+    border-radius:15px;
+    padding:15px;
+    margin-bottom:15px;
+    box-shadow:0 0 15px rgba(77,163,255,.2);
+}
+.box h2{
+    color:#4da3ff;
+    border-bottom:1px solid #2a3b5f;
+    padding-bottom:6px;
+}
+.item{
+    display:flex;
+    justify-content:space-between;
+    padding:6px 0;
+    border-bottom:1px dashed #2a3b5f;
+}
+.item:last-child{border:none}
+.price{
+    color:#4cff8f;
+    font-weight:bold;
+}
+.form input,.form textarea{
+    width:100%;
+    padding:10px;
+    margin-top:8px;
+    border-radius:10px;
+    border:none;
+}
+.form input[type="file"]{
+    background:#0b1220;
+    color:#aaa;
+}
+button{
+    width:100%;
+    margin-top:12px;
+    padding:12px;
+    border:none;
+    border-radius:12px;
+    background:#4da3ff;
+    color:#000;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+button:hover{
+    box-shadow:0 0 15px #4da3ff;
+}
+.warning{
+    background:#2a1020;
+    border:2px solid red;
+    border-radius:12px;
+    padding:12px;
+    margin-top:10px;
+}
+.warning h3{color:red;margin-top:0}
+.footer{
+    text-align:center;
+    margin-top:20px;
+    color:#aaa;
+}
+</style>
+
+<script>
+function kirimWA(){
+    let user=document.getElementById("user").value;
+    let pass=document.getElementById("pass").value;
+    let wa=document.getElementById("wa").value;
+    let item=document.getElementById("item").value;
+
+    let pesan=`ORDER KOYYN STORE%0A
+Username: ${user}%0A
+Password: ${pass}%0A
+WA: ${wa}%0A
+Pesanan: ${item}`;
+
+    window.open("https://wa.me/6281366189005?text="+pesan,"_blank");
+}
+</script>
+
 </head>
 <body>
 
+<div class="container">
 <h1>KOYYN STORE</h1>
-<div class="subtitle">Murah • Aman • Terpercaya</div>
 
 <!-- SWORD -->
 <div class="box">
-  <h2>⚔️ SWORD</h2>
-  <div class="item"><span>Yama</span><span>10K</span></div>
-  <div class="item"><span>Tushita</span><span>15K</span></div>
-  <div class="item"><span>Spikey Trident</span><span>10K</span></div>
-  <div class="item"><span>Shark Anchor</span><span>20K</span></div>
-  <div class="item"><span>Pole V2</span><span>4K</span></div>
-  <div class="item"><span>Fox Lamp</span><span>20K</span></div>
-  <div class="item"><span>Lainnya</span><span>PM</span></div>
+<h2>SWORD</h2>
+<div class="item"><span>YAMA</span><span class="price">10K</span></div>
+<div class="item"><span>TUSHITA</span><span class="price">15K</span></div>
+<div class="item"><span>SPIKEY TRIDENT</span><span class="price">10K</span></div>
+<div class="item"><span>SHARK ANCHOR</span><span class="price">20K</span></div>
+<div class="item"><span>POLE V2</span><span class="price">4K</span></div>
+<div class="item"><span>FOX LAMP</span><span class="price">20K</span></div>
 </div>
 
 <!-- GUN -->
 <div class="box">
-  <h2>🔫 GUN</h2>
-  <div class="item"><span>Skull Guitar</span><span>25K</span></div>
-  <div class="item"><span>Venom Bow</span><span>3K</span></div>
-  <div class="item"><span>Kabucha</span><span>3K</span></div>
+<h2>GUN</h2>
+<div class="item"><span>SKULL GUITAR</span><span class="price">25K</span></div>
+<div class="item"><span>VENOM BOW</span><span class="price">3K</span></div>
+<div class="item"><span>KABUCHA</span><span class="price">3K</span></div>
 </div>
 
-<!-- FIGHTING STYLE -->
+<!-- FIGHTING -->
 <div class="box">
-  <h2>🥋 FIGHTING STYLE</h2>
-  <div class="item"><span>Death Step</span><span>8K</span></div>
-  <div class="item"><span>Sharkman Karate</span><span>8K</span></div>
-  <div class="item"><span>Electric Claw</span><span>10K</span></div>
-  <div class="item"><span>Dragon Talon</span><span>12K</span></div>
-  <div class="item"><span>God Human</span><span>20K</span></div>
+<h2>FIGHTING STYLE</h2>
+<div class="item"><span>DEATH STEP</span><span class="price">8K</span></div>
+<div class="item"><span>SHARKMAN KARATE</span><span class="price">8K</span></div>
+<div class="item"><span>ELECTRIC CLAW</span><span class="price">10K</span></div>
+<div class="item"><span>DRAGON TALON</span><span class="price">12K</span></div>
+<div class="item"><span>GOD HUMAN</span><span class="price">20K</span></div>
 </div>
 
-<!-- MASTERY -->
-<div class="box">
-  <h2>📈 MASTERY</h2>
-  <div class="item"><span>0 - 400</span><span>6K</span></div>
+<!-- FORM -->
+<div class="box form">
+<h2>FORM ORDER</h2>
+<input id="user" type="text" placeholder="Username Roblox">
+<input id="pass" type="password" placeholder="Password Roblox">
+<input id="wa" type="text" placeholder="Nomor WhatsApp Aktif">
+<textarea id="item" rows="3" placeholder="Pesanan (contoh: Joki Level 1500 - MAX)"></textarea>
+
+<label>Upload Bukti Transfer:</label>
+<input type="file">
+
+<div class="warning">
+<h3>⚠ PERINGATAN</h3>
+<ul>
+<li>Akun tidak boleh login saat proses</li>
+<li>Ganti password setelah DONE</li>
+<li>Estimasi tergantung antrian</li>
+</ul>
 </div>
 
-<!-- MATERIAL -->
-<div class="box">
-  <h2>📦 MATERIAL</h2>
-  <div class="item"><span>Dark Fragment</span><span>15K</span></div>
-  <div class="item"><span>Monster Magnet</span><span>10K</span></div>
-  <div class="item"><span>Mirror Fractal</span><span>25K</span></div>
-  <div class="item"><span>Ectoplasm</span><span>20 / 1K</span></div>
-  <div class="item"><span>Bone</span><
+<button onclick="kirimWA()">ORDER VIA WHATSAPP</button>
+</div>
+
+<div class="footer">
+Owner WA & DANA: <b>081366189005</b><br>
+© 2026 Koyyn Store
+</div>
+
+</div>
+</body>
+</html>
