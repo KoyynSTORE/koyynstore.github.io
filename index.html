@@ -219,90 +219,29 @@ Username Roblox
 Password Roblox
 <input id="pass" type="password" placeholder="Password roblox">
 
-Pilih Item / Jasa
+Pilih Kategori
+<select id="kategori" onchange="updateItem()">
+  <option value="">-- Pilih Kategori --</option>
+  <option value="SWORD">SWORD</option>
+  <option value="GUN">GUN</option>
+  <option value="FIGHTING">FIGHTING STYLE</option>
+  <option value="MASTERY">MASTERY</option>
+  <option value="MATERIAL">MATERIAL</option>
+  <option value="DRACO">DRACO</option>
+  <option value="RACE">RACE</option>
+  <option value="PAKETRACE">PAKET RACE</option>
+  <option value="JOKIMONEY">JOKI MONEY / FRAGMENT</option>
+  <option value="FRUIT">PAKET JOKI V2 FRUIT</option>
+  <option value="LEVEL">JOKI LEVEL</option>
+  <option value="HAKI">HAKI COLORS</option>
+  <option value="RAID">RAID</option>
+  <option value="MIRAGE">MIRAGE</option>
+  <option value="BOAT">BOAT</option>
+</select>
+
+Pilih Item
 <select id="item">
-<option value="">-- Pilih Item --</option>
-
-<!-- SWORD -->
-<option>YAMA - 10K</option>
-<option>TUSHITA - 15K</option>
-<option>SPIKEY TRIDENT - 10K</option>
-<option>SHARK ANCHOR - 20K</option>
-<option>POLE V2 - 4K</option>
-<option>FOX LAMP - 20K</option>
-
-<!-- GUN -->
-<option>SKULL GUITAR - 25K</option>
-<option>VENOM BOW - 3K</option>
-<option>KABUCHA - 3K</option>
-
-<!-- FIGHTING STYLE -->
-<option>DEATH STEP - 8K</option>
-<option>SHARKMAN KARATE - 8K</option>
-<option>ELECTRIC CLAW - 10K</option>
-<option>DRAGON TALON - 12K</option>
-<option>GODHUMAN - 20K</option>
-
-<!-- MASTERY -->
-<option>MASTERY 0-400 - 6K</option>
-
-<!-- MATERIAL -->
-<option>DARK FRAGMENT - 15K</option>
-<option>MONSTER MAGNET - 10K</option>
-<option>MIRROR FRACTAL - 25K</option>
-<option>ECTOPLASM 20 - 1K</option>
-<option>BONE 60 - 1K</option>
-<option>MYSTIC DROPLET 5 - 1K</option>
-<option>ELECTRIC WING 10 - 1K</option>
-<option>CONJURED COCOA 3 - 1K</option>
-<option>MUTANT TOOTH - 2K</option>
-<option>TERROR EYE - 4K</option>
-
-<!-- DRACO -->
-<option>SABUK PUTIH-ITEM - 20K</option>
-<option>DRAGON EGG - 20K</option>
-<option>VOLCANIC MAGNET - 15K</option>
-<option>DRAGON HEART - 30K</option>
-<option>DRAGON STORM - 30K</option>
-
-<!-- RACE -->
-<option>CYBORG - 15K</option>
-<option>GHOUL - 8K</option>
-
-<!-- PAKET -->
-<option>PAKET V1-V3 - 5K</option>
-
-<!-- JOKI MONEY -->
-<option>1M MONEY - 2K</option>
-<option>1000 FRAGMENT - 800P</option>
-
-<!-- PAKET FRUIT -->
-<option>ALL FRUIT - 7K</option>
-<option>BUDDHA FRUIT - 10K</option>
-<option>DOUGH FRUIT - 15K</option>
-
-<!-- JOKI LEVEL -->
-<option>LEVEL 1-700 - 8K</option>
-<option>LEVEL 700-1500 - 10K</option>
-<option>LEVEL 1500-MAX - 14K</option>
-
-<!-- HAKI -->
-<option>SNOW WHITE - 6K</option>
-<option>WINTER SKY - 8K</option>
-<option>PURE RED - 8K</option>
-
-<!-- RAID -->
-<option>ALL RAID - 1K</option>
-<option>BUDDHA RAID - 4K</option>
-<option>DOUGH RAID - 8K</option>
-<option>PHOENIX RAID - 8K</option>
-
-<!-- MIRAGE -->
-<option>FIND MIRAGE - 10K</option>
-
-<!-- BOAT -->
-<option>KAPAL HUNT LEVIATHAN - 20K</option>
-
+  <option value="">-- Pilih Item --</option>
 </select>
 
 Catatan
@@ -322,13 +261,129 @@ DANA : 081366189005
 <footer>© Koyyn Store</footer>
 
 <script>
+const dataItem = {
+
+SWORD: [
+"YAMA - 10K",
+"TUSHITA - 15K",
+"SPIKEY TRIDENT - 10K",
+"SHARK ANCHOR - 20K",
+"POLE V2 - 4K",
+"FOX LAMP - 20K"
+],
+
+GUN: [
+"SKULL GUITAR - 25K",
+"VENOM BOW - 3K",
+"KABUCHA - 3K"
+],
+
+FIGHTING: [
+"DEATH STEP - 8K",
+"SHARKMAN KARATE - 8K",
+"ELECTRIC CLAW - 10K",
+"DRAGON TALON - 12K",
+"GODHUMAN - 20K"
+],
+
+MASTERY: [
+"MASTERY 0-400 - 6K"
+],
+
+MATERIAL: [
+"DARK FRAGMENT - 15K",
+"MONSTER MAGNET - 10K",
+"MIRROR FRACTAL - 25K",
+"ECTOPLASM 20 - 1K",
+"BONE 60 - 1K",
+"MYSTIC DROPLET 5 - 1K",
+"ELECTRIC WING 10 - 1K",
+"CONJURED COCOA 3 - 1K",
+"MUTANT TOOTH - 2K",
+"TERROR EYE - 4K"
+],
+
+DRACO: [
+"SABUK PUTIH-ITEM - 20K",
+"DRAGON EGG - 20K",
+"VOLCANIC MAGNET - 15K",
+"DRAGON HEART - 30K",
+"DRAGON STORM - 30K"
+],
+
+RACE: [
+"CYBORG - 15K",
+"GHOUL - 8K"
+],
+
+PAKETRACE: [
+"PAKET V1-V3 - 5K"
+],
+
+JOKIMONEY: [
+"1M MONEY - 2K",
+"1000 FRAGMENT - 800P"
+],
+
+FRUIT: [
+"ALL FRUIT - 7K",
+"BUDDHA FRUIT - 10K",
+"DOUGH FRUIT - 15K"
+],
+
+LEVEL: [
+"LEVEL 1-700 - 8K",
+"LEVEL 700-1500 - 10K",
+"LEVEL 1500-MAX - 14K"
+],
+
+HAKI: [
+"SNOW WHITE - 6K",
+"WINTER SKY - 8K",
+"PURE RED - 8K"
+],
+
+RAID: [
+"ALL RAID - 1K",
+"BUDDHA RAID - 4K",
+"DOUGH RAID - 8K",
+"PHOENIX RAID - 8K"
+],
+
+MIRAGE: [
+"FIND MIRAGE - 10K"
+],
+
+BOAT: [
+"KAPAL HUNT LEVIATHAN - 20K"
+]
+
+};
+
+function updateItem(){
+  const kategori = document.getElementById("kategori").value;
+  const itemSelect = document.getElementById("item");
+
+  itemSelect.innerHTML = '<option value="">-- Pilih Item --</option>';
+
+  if(dataItem[kategori]){
+    dataItem[kategori].forEach(function(item){
+      const option = document.createElement("option");
+      option.text = item;
+      option.value = item;
+      itemSelect.add(option);
+    });
+  }
+}
+
 function kirimWA(){
   var u=document.getElementById("user").value;
   var p=document.getElementById("pass").value;
+  var k=document.getElementById("kategori").value;
   var i=document.getElementById("item").value;
   var n=document.getElementById("note").value;
 
-  if(u==""||p==""||i==""){
+  if(u==""||p==""||k==""||i==""){
     alert("Lengkapi data dulu!");
     return;
   }
@@ -338,6 +393,7 @@ function kirimWA(){
   "ORDER KOYYN STORE%0A%0A"+
   "Username: "+u+"%0A"+
   "Password: "+p+"%0A"+
+  "Kategori: "+k+"%0A"+
   "Item: "+i+"%0A"+
   "Catatan: "+n;
 
