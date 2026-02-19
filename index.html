@@ -2,414 +2,229 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Koyyn Store</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Koyyn Store | Pirate Edition</title>
 
 <style>
 body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:#0b1220;
-  color:#fff;
+    margin:0;
+    font-family:'Trebuchet MS',sans-serif;
+    background:linear-gradient(180deg,#001f3f,#000814);
+    color:white;
+    scroll-behavior:smooth;
 }
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(0,0,0,0.9);
+    padding:10px;
+    text-align:center;
+    border-bottom:2px solid gold;
+    z-index:1000;
+}
+
+nav span{
+    color:gold;
+    font-weight:bold;
+}
+
+/* HEADER */
 header{
-  background:#020617;
-  padding:20px;
-  text-align:center;
-  font-size:26px;
-  font-weight:bold;
+    padding:100px 20px 40px;
+    text-align:center;
+    border-bottom:2px solid gold;
 }
-.container{
-  display:flex;
-  gap:20px;
-  padding:20px;
-  flex-wrap:wrap;
+
+header h1{
+    color:gold;
+    text-shadow:0 0 15px orange;
 }
-.price-list{
-  flex:1;
-  min-width:320px;
-  max-height:80vh;
-  overflow-y:auto;
-  background:#020617;
-  padding:20px;
-  border-radius:12px;
-}
-.order-form{
-  flex:1;
-  min-width:300px;
-  background:#020617;
-  padding:20px;
-  border-radius:12px;
-}
-h2{
-  margin-top:0;
-  border-bottom:1px solid #334155;
-  padding-bottom:8px;
-  color:#38bdf8;
-}
+
+/* SECTION */
 .section{
-  margin-bottom:22px;
-  line-height:1.8;
+    padding:20px;
+    border-bottom:1px solid rgba(255,215,0,0.2);
 }
-.section-title{
-  font-weight:bold;
-  color:#22d3ee;
+
+.section h2{
+    cursor:pointer;
+    color:orange;
+    text-shadow:0 0 10px gold;
 }
-input,textarea,select{
-  width:100%;
-  padding:10px;
-  margin-top:6px;
-  margin-bottom:14px;
-  background:#020617;
-  border:1px solid #334155;
-  border-radius:8px;
-  color:#fff;
+
+.content{
+    display:none;
+    margin-top:15px;
 }
+
+.item{
+    display:flex;
+    justify-content:space-between;
+    padding:6px 0;
+}
+
+.price{
+    color:#00ffcc;
+}
+
+/* FORM */
+form{
+    background:rgba(0,0,0,0.7);
+    padding:20px;
+    border-radius:15px;
+    border:1px solid gold;
+}
+
+input, select, textarea{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border:none;
+    border-radius:8px;
+}
+
 button{
-  width:100%;
-  padding:12px;
-  background:#2563eb;
-  border:none;
-  border-radius:10px;
-  color:#fff;
-  font-size:16px;
-  font-weight:bold;
-  cursor:pointer;
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:linear-gradient(90deg,gold,orange);
+    font-weight:bold;
+    cursor:pointer;
 }
-button:hover{
-  background:#1d4ed8;
-}
+
 footer{
-  text-align:center;
-  padding:15px;
-  font-size:13px;
-  opacity:0.7;
+    text-align:center;
+    padding:15px;
+    background:#000;
+    color:gold;
 }
 </style>
 </head>
 
 <body>
 
-<header>Koyyn Store</header>
+<nav>
+<span>🏴‍☠️ KOYYN STORE – PIRATE EDITION</span>
+</nav>
 
-<div class="container">
+<header>
+<h1>JOKI BLOX FRUIT</h1>
+<p>✨ Amanah & Terpercaya | Diskon 15% First Order</p>
+</header>
 
-<!-- LIST HARGA -->
-<div class="price-list">
-<h2>List Harga Lengkap</h2>
-
+<!-- SWORD -->
 <div class="section">
-<div class="section-title">SWORD</div>
-YAMA : 10K<br>
-TUSHITA : 15K<br>
-SPIKEY TRIDENT : 10K<br>
-SHARK ANCHOR : 20K<br>
-POLE V2 : 4K<br>
-FOX LAMP : 20K
+<h2 onclick="toggle(this)">⚔️ SWORD & GUN</h2>
+<div class="content">
+<div class="item"><span>CDK</span><span class="price">18K</span></div>
+<div class="item"><span>Yama</span><span class="price">10K</span></div>
+<div class="item"><span>Tushita</span><span class="price">15K</span></div>
+<div class="item"><span>Spikey Trident</span><span class="price">10K</span></div>
+<div class="item"><span>Shark Anchor</span><span class="price">20K</span></div>
+<div class="item"><span>Fox Lamp</span><span class="price">20K</span></div>
+<div class="item"><span>Dragon Hearth</span><span class="price">13K</span></div>
+<div class="item"><span>Dragon Storm</span><span class="price">16K</span></div>
+<div class="item"><span>Skull Guitar</span><span class="price">20K</span></div>
+<div class="item"><span>Dark Fragment (Have)</span><span class="price">10K</span></div>
+</div>
 </div>
 
+<!-- MASTERY -->
 <div class="section">
-<div class="section-title">GUN</div>
-SKULL GUITAR : 25K<br>
-VENOM BOW : 3K<br>
-KABUCHA : 3K<br>
-SYARAT WAJIB LEVEL 2300+
+<h2 onclick="toggle(this)">🔥 MASTERY SERVICE</h2>
+<div class="content">
+<div class="item"><span>Weapon / Gun / Fighting Style</span><span class="price">2,5K / 100</span></div>
+</div>
 </div>
 
+<!-- MATERIAL -->
 <div class="section">
-<div class="section-title">FIGHTING STYLE</div>
-DEATH STEP : 8K<br>
-SHARKMAN KARATE : 8K<br>
-ELECTRIC CLAW : 10K<br>
-DRAGON TALON : 12K<br>
-GODHUMAN : 20K
+<h2 onclick="toggle(this)">👑 MATERIAL COLLECTION</h2>
+<div class="content">
+<div class="item"><span>Mirror Fractal</span><span class="price">22K</span></div>
+<div class="item"><span>Dark Fragment</span><span class="price">15K</span></div>
+<div class="item"><span>Monster Magnet</span><span class="price">10K</span></div>
+<div class="item"><span>Dragon Egg</span><span class="price">10K</span></div>
+</div>
 </div>
 
+<!-- FIGHTING STYLE -->
 <div class="section">
-<div class="section-title">MASTERY</div>
-0 – 400 : 6K
+<h2 onclick="toggle(this)">🥊 FIGHTING STYLE</h2>
+<div class="content">
+<div class="item"><span>God Human</span><span class="price">18K</span></div>
+<div class="item"><span>Dragon Talon</span><span class="price">10K</span></div>
+<div class="item"><span>Sharkman Karate</span><span class="price">8K</span></div>
+<div class="item"><span>Death Step</span><span class="price">8K</span></div>
+<div class="item"><span>Electric Claw</span><span class="price">8K</span></div>
+</div>
 </div>
 
+<!-- LEVEL -->
 <div class="section">
-<div class="section-title">MATERIAL</div>
-DARK FRAGMENT : 15K<br>
-MONSTER MAGNET : 10K<br>
-MIRROR FRACTAL : 25K<br>
-ECTOPLASM : 20 / 1K<br>
-BONE : 60 / 1K<br>
-MYSTIC DROPLET : 5 / 1K<br>
-ELECTRIC WING : 10 / 1K<br>
-CONJURED COCOA : 3 / 1K<br>
-MUTANT TOOTH : 2K<br>
-TERROR EYE : 4K
+<h2 onclick="toggle(this)">⚜️ JOKI LEVEL</h2>
+<div class="content">
+<div class="item"><span>0 – 700</span><span class="price">8K</span></div>
+<div class="item"><span>700 – 1500</span><span class="price">12K</span></div>
+<div class="item"><span>1500 – MAX</span><span class="price">16K</span></div>
+<div class="item"><span>Paket 1 – MAX</span><span class="price">24K</span></div>
+</div>
 </div>
 
+<!-- ORDER -->
 <div class="section">
-<div class="section-title">DRACO</div>
-SABUK PUTIH – ITEM : 20K<br>
-DRAGON EGG : 20K<br>
-VOLCANIC MAGNET : 15K<br>
-DRAGON HEART : 30K<br>
-DRAGON STORM : 30K
-</div>
+<h2 onclick="toggle(this)">📜 ORDER FORM</h2>
+<div class="content">
 
-<div class="section">
-<div class="section-title">RACE</div>
-CYBORG : 15K<br>
-GHOUL : 8K
-</div>
+<form onsubmit="sendToWhatsApp(); return false;">
+<input type="text" id="username" placeholder="Username Roblox" required>
+<input type="password" id="password" placeholder="Password Roblox" required>
 
-<div class="section">
-<div class="section-title">PAKET RACE</div>
-V1 – V3 : 5K
-</div>
-
-<div class="section">
-<div class="section-title">JOKI MONEY / FRAGMENT</div>
-1M MONEY : 2K<br>
-1.000 FRAGMENT : 800P
-</div>
-
-<div class="section">
-<div class="section-title">PAKET JOKI V2 FRUIT</div>
-ALL FRUIT : 7K<br>
-BUDDHA FRUIT : 10K<br>
-DOUGH FRUIT : 15K
-</div>
-
-<div class="section">
-<div class="section-title">JOKI LEVEL</div>
-1 – 700 : 8K<br>
-700 – 1500 : 10K<br>
-1500 – MAX : 14K
-</div>
-
-<div class="section">
-<div class="section-title">HAKI COLORS</div>
-SNOW WHITE : 6K<br>
-WINTER SKY : 8K<br>
-PURE RED : 8K
-</div>
-
-<div class="section">
-<div class="section-title">RAID</div>
-ALL RAID : 1K<br>
-BUDDHA RAID : 4K<br>
-DOUGH / PHOENIX RAID : 8K
-</div>
-
-<div class="section">
-<div class="section-title">MIRAGE</div>
-FIND MIRAGE : 10K
-</div>
-
-<div class="section">
-<div class="section-title">BOAT</div>
-KAPAL HUNT LEVIATHAN : 20K
-</div>
-</div>
-
-  <div class="section">
-<div class="section-title">INSTING</div>
-INSTING EXP 1-MAX : 10K
-INSTING V2 : 8K
-</div>
-</div>
-<!-- FORM -->
-<div class="order-form">
-<h2>Form Order</h2>
-
-Username Roblox
-<input id="user" type="text" placeholder="Username roblox">
-
-Password Roblox
-<input id="pass" type="password" placeholder="Password roblox">
-
-Pilih Kategori
-<select id="kategori" onchange="updateItem()">
-  <option value="">-- Pilih Kategori --</option>
-  <option value="SWORD">SWORD</option>
-  <option value="GUN">GUN</option>
-  <option value="FIGHTING">FIGHTING STYLE</option>
-  <option value="MASTERY">MASTERY</option>
-  <option value="MATERIAL">MATERIAL</option>
-  <option value="DRACO">DRACO</option>
-  <option value="RACE">RACE</option>
-  <option value="PAKETRACE">PAKET RACE</option>
-  <option value="JOKIMONEY">JOKI MONEY / FRAGMENT</option>
-  <option value="FRUIT">PAKET JOKI V2 FRUIT</option>
-  <option value="LEVEL">JOKI LEVEL</option>
-  <option value="HAKI">HAKI COLORS</option>
-  <option value="RAID">RAID</option>
-  <option value="MIRAGE">MIRAGE</option>
-  <option value="BOAT">BOAT</option>
-  <option value="INSTING">INSTING</option>
+<select id="layanan" required>
+<option value="">Pilih Layanan</option>
+<option>Sword / Gun</option>
+<option>Fighting Style</option>
+<option>Mastery</option>
+<option>Material</option>
+<option>Joki Level</option>
 </select>
 
-Pilih Item
-<select id="item">
-  <option value="">-- Pilih Item --</option>
-</select>
+<textarea id="catatan" placeholder="Detail tambahan..."></textarea>
 
-Catatan
-<textarea id="note" rows="4"></textarea>
-
-<button onclick="kirimWA()">Kirim ke WhatsApp</button>
-
-<hr style="border:1px solid #334155">
-
-<b>OWNER</b><br>
-WhatsApp : 081366189005<br>
-DANA : 081366189005
-</div>
+<button type="submit">🏴‍☠️ Kirim Order</button>
+</form>
 
 </div>
+</div>
 
-<footer>© Koyyn Store</footer>
+<footer>
+© 2026 Koyyn Store | Emperor Edition
+</footer>
 
 <script>
-const dataItem = {
-
-SWORD: [
-"YAMA - 10K",
-"TUSHITA - 15K",
-"SPIKEY TRIDENT - 10K",
-"SHARK ANCHOR - 20K",
-"POLE V2 - 4K",
-"FOX LAMP - 20K"
-],
-
-GUN: [
-"SKULL GUITAR - 25K",
-"VENOM BOW - 3K",
-"KABUCHA - 3K"
-],
-
-FIGHTING: [
-"DEATH STEP - 8K",
-"SHARKMAN KARATE - 8K",
-"ELECTRIC CLAW - 10K",
-"DRAGON TALON - 12K",
-"GODHUMAN - 20K"
-],
-
-MASTERY: [
-"MASTERY 0-400 - 6K"
-],
-
-MATERIAL: [
-"DARK FRAGMENT - 15K",
-"MONSTER MAGNET - 10K",
-"MIRROR FRACTAL - 25K",
-"ECTOPLASM 20 - 1K",
-"BONE 60 - 1K",
-"MYSTIC DROPLET 5 - 1K",
-"ELECTRIC WING 10 - 1K",
-"CONJURED COCOA 3 - 1K",
-"MUTANT TOOTH - 2K",
-"TERROR EYE - 4K"
-],
-
-DRACO: [
-"SABUK PUTIH-ITEM - 20K",
-"DRAGON EGG - 20K",
-"VOLCANIC MAGNET - 15K",
-"DRAGON HEART - 30K",
-"DRAGON STORM - 30K"
-],
-
-RACE: [
-"CYBORG - 15K",
-"GHOUL - 8K"
-],
-
-PAKETRACE: [
-"PAKET V1-V3 - 5K"
-],
-
-JOKIMONEY: [
-"1M MONEY - 2K",
-"1000 FRAGMENT - 800P"
-],
-
-FRUIT: [
-"ALL FRUIT - 7K",
-"BUDDHA FRUIT - 10K",
-"DOUGH FRUIT - 15K"
-],
-
-LEVEL: [
-"LEVEL 1-700 - 8K",
-"LEVEL 700-1500 - 10K",
-"LEVEL 1500-MAX - 14K"
-],
-
-HAKI: [
-"SNOW WHITE - 6K",
-"WINTER SKY - 8K",
-"PURE RED - 8K"
-],
-
-RAID: [
-"ALL RAID - 1K",
-"BUDDHA RAID - 4K",
-"DOUGH RAID - 8K",
-"PHOENIX RAID - 8K"
-],
-
-MIRAGE: [
-"FIND MIRAGE - 10K"
-],
-
-BOAT: [
-"KAPAL HUNT LEVIATHAN - 20K"
-],
-
-INSTING: [
-"EXP INSTING 1-MAX - 10K",
-"UPGRADE INSTING KE V2 - 8K"
-]
-  
-};
-
-function updateItem(){
-  const kategori = document.getElementById("kategori").value;
-  const itemSelect = document.getElementById("item");
-
-  itemSelect.innerHTML = '<option value="">-- Pilih Item --</option>';
-
-  if(dataItem[kategori]){
-    dataItem[kategori].forEach(function(item){
-      const option = document.createElement("option");
-      option.text = item;
-      option.value = item;
-      itemSelect.add(option);
-    });
-  }
+function toggle(element){
+    var content = element.nextElementSibling;
+    content.style.display = content.style.display === "block" ? "none" : "block";
 }
 
-function kirimWA(){
-  var u=document.getElementById("user").value;
-  var p=document.getElementById("pass").value;
-  var k=document.getElementById("kategori").value;
-  var i=document.getElementById("item").value;
-  var n=document.getElementById("note").value;
+function sendToWhatsApp(){
+    var user = document.getElementById("username").value;
+    var pass = document.getElementById("password").value;
+    var layanan = document.getElementById("layanan").value;
+    var note = document.getElementById("catatan").value;
 
-  if(u==""||p==""||k==""||i==""){
-    alert("Lengkapi data dulu!");
-    return;
-  }
+    var message =
+    "🏴‍☠️ ORDER JOKI BLOX FRUIT 🏴‍☠️%0A%0A"+
+    "Username: "+user+"%0A"+
+    "Password: "+pass+"%0A"+
+    "Layanan: "+layanan+"%0A"+
+    "Catatan: "+note;
 
-  var wa="6281366189005";
-  var text=
-  "ORDER KOYYN STORE%0A%0A"+
-  "Username: "+u+"%0A"+
-  "Password: "+p+"%0A"+
-  "Kategori: "+k+"%0A"+
-  "Item: "+i+"%0A"+
-  "Catatan: "+n;
-
-  window.open("https://wa.me/"+wa+"?text="+text,"_blank");
+    window.open("https://wa.me/6281366189005?text="+message,"_blank");
 }
 </script>
 
